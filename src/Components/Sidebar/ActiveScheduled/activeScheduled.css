@@ -1,0 +1,86 @@
+.tabs{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.tabs::-webkit-scrollbar{
+  width: 0px; 
+}
+.container{
+  margin-top: 3px;
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  cursor: pointer; 
+}
+.active h4{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+.schedule{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  cursor: pointer;
+ 
+}
+.schedule h4{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #5E5E62;
+}
+.underline{
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #D9D7D7;
+}
+.underline-container{
+  width: 50%;
+  height: 4px;
+  background-color: black;
+}
+
+
+
+/* -----------active Trip------------- */
+
+/* .ActiveTrip{
+  width: 95%;
+  height: 100%;
+  position: relative;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.active-container{
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ScheduleTrip{
+  width: 95%;
+  height: 100vh;
+  background-color: blue;
+  overflow-y: scroll;
+  display: none;
+} */
