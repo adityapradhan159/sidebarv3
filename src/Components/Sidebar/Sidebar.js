@@ -63,9 +63,9 @@ const Sidebar = () => {
       </div>
       
       <div className="divider"></div>
-      <ActiveScheduled/>   
 
-      
+      <ActiveScheduled/>   
+          
     </div>
     
     </> 

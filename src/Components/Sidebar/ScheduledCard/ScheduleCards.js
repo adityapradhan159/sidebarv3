@@ -23,16 +23,15 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
         setShowLinkD((s) => !s)
     }
 
- 
-    
 
     const handleChange = () => {
 
     }
 
     
+
+    // Storing ID......
     const handleScreen=(id)=>{
-       
         storeId(id)
     }
 
