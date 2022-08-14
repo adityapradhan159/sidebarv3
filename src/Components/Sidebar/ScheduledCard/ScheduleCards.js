@@ -13,6 +13,7 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
         const add = [...arr,[]]
         setArr(add);
         setShowLink((s) => !s)
+
     }
 
     // Add Driver Input
@@ -32,7 +33,7 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
 
     // Storing ID......
     const handleScreen=(id)=>{
-        storeId(id)
+        storeId(id);
     }
 
     // To get Date and Day.....
@@ -92,8 +93,7 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
             {/* ----------Company Name------------- */}
             <div className="companyName" style={{cursor:"pointer"}} onClick={() => handleScreen(item.id)}>
                 <p>
-                   { item.company[0].company1} + {item.company.length} others  
-                                    
+                   { item.company[0].company1} + {item.company.length} others                    
                 </p>
                 
                
@@ -154,7 +154,7 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
                     <img src="./images/phone.svg" alt="" />
                 </div>
                 <div className="message">
-                    <img src="./images/message.svg" alt="" />
+                    <img src="./images/Chat.svg" alt="" />
                 </div>
                 <div className="menu">
                     <img src="./images/verticalMenu.svg" alt="" />

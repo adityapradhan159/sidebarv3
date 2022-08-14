@@ -1,63 +1,3 @@
-/* .tabs{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  overflow-y: scroll;
-}
-.tabs::-webkit-scrollbar{
-  width: 0px; 
-}
-.container{
-  margin-top: 3px;
-  width: 95%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-}
-.active{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 40px;
-  cursor: pointer; 
-}
-.active h4{
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-}
-.schedule{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 40px;
-  cursor: pointer;
- 
-}
-.schedule h4{
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 15px;
-  color: #5E5E62;
-}
-.underline{
-  width: 100%;
-  display: flex;
-  border-bottom: 1px solid #D9D7D7;
-}
-.underline-container{
-  width: 50%;
-  height: 4px;
-  background-color: black;
-} */
-
-
-
-
 
 .ASTabContainer {
   margin-top: 5px;
@@ -115,8 +55,7 @@
 }
 
 .AScontent-tabs::-webkit-scrollbar{
-  width: 3px; 
-  background-color: rgb(221, 216, 216);
+  width: 3px;
 }
 .AScontent{
   width: 100%;
@@ -129,10 +68,7 @@
   flex-direction: column;
 }
 
-
-
-
-.months{
+.AScontent .months{
   width: 100%;
   height: 27px;
   display: flex;

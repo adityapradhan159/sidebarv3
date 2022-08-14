@@ -9,7 +9,7 @@
     display: none;
     align-items: center;
     flex-direction: column;
-    z-index: 222;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
@@ -80,6 +80,14 @@
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
+}
+
+ .active-comp .companyImg .img-comp{
+    border: 2px solid black;
+    border-radius: 50%;
+}
+ .companyImg .img-comp{
+    border:none;
 }
 
 .companyImg{

@@ -4,7 +4,30 @@
         "id":0,
         "icon":"./images/alertIcon.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"alert",
@@ -18,7 +41,30 @@
         "id":1,
         "icon":"./images/successTruck.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"driving",
@@ -32,7 +78,30 @@
         "id":2,
         "icon":"./images/warningIcon.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"warning",
@@ -45,7 +114,30 @@
         "id":3,
         "icon":"./images/warningIcon.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"warning",
@@ -58,7 +150,30 @@
         "id":4,
         "icon":"./images/successTruck.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"driving",
@@ -71,7 +186,30 @@
         "id":5,
         "icon":"./images/truck.svg",
         "name":"UP 01 AP 1345",
-        "company":"VN Cosmetics + 3 Other",
+        "company":[
+            {
+                "id":0,
+                "company1":"VN Cosmetics",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Kerala",
+                "RegistrationState":"Kerala"
+            },
+            {
+                "id":1,
+                "company1":"Master Card",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            },
+            {
+                "id":2,
+                "company1":"Walt Disney",
+                "address":"3517 W. Gray St. Utica, Pennsylvania 57867",
+                "RegistrationCity":"Goa",
+                "RegistrationState":"Goa"
+            }
+
+        ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
         "status":"stop",

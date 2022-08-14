@@ -1,10 +1,10 @@
-import Container from '../src/Components/Container/Container';
 import './App.css';
+import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
   return (
     <>
-      <Container/>
+      <Sidebar/>
     </>
   );
 }

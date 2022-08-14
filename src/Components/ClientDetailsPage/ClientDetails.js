@@ -1,7 +1,7 @@
 import React, { useState,useEffect} from 'react';
 import "./clientDetails.css"
 
-const ClientDetails = ({isScreenShown, setScreenShown,item,getStateProp}) => {
+const ClientDetails = ({isScreenShown, setScreenShown,item}) => {
 
     const [tabId,setTabId] = useState(0)
 
@@ -10,19 +10,19 @@ const ClientDetails = ({isScreenShown, setScreenShown,item,getStateProp}) => {
             setScreenShown(false);
             setTabId(0)  
         }
-        getStateProp(tabId)
-        
     }
 
-    const handleTabChange = (id,value) => {
+    const [comptoggleState, setCompToggleState] = useState(0);
+
+    const handleTabChange = (id) => {
         setTabId(id);
-        console.log(value);
+        // console.log(value);
+        setCompToggleState(id)
     }
     
     useEffect(() => {
-      
         setTabId(0)
-    
+        setCompToggleState(0)
     }, [item])
     
     
@@ -109,16 +109,16 @@ const ClientDetails = ({isScreenShown, setScreenShown,item,getStateProp}) => {
             {
                item?.company?.map((value) => (
                 <>
-                    <div className="companyNameImgContainer" style={{cursor:"pointer"}} onClick={() => handleTabChange(value.id,value)}>
+                    <div className={ comptoggleState === (value.id)? "companyNameImgContainer active-comp": "companyNameImgContainer"} style={{cursor:"pointer"}} onClick={() => handleTabChange(value.id,value)}>
                         <div className="companyImg">
-                            <img src="./images/companyImg.svg" alt="" />
+                            <img className='img-comp' src="./images/companyImg.svg" alt="" />
                             <img className='cancelBtn' src="./images/cancelBtn.svg" alt="" />
                         </div>
                         <div className="companyDetailsName">
                             <p>
                                 {value.company1}
                             </p>
-                        </div>  
+                        </div>  {}
                     </div>
                 </>
                 ))

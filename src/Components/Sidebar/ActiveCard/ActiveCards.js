@@ -26,7 +26,7 @@ const handleActiveId = (id,item) => {
                 item.status == "warning" ? {color:"#E78911",textDecoration:"underline"}:{ color:""}}>{item.name}</h3>
             </div>
             <div className="companyName">
-                <p>{item.company}</p>
+                <p> { item.company[0].company1} + {item.company.length} others  </p>
             </div>
             <div className="route">
                 <p>{item.route}</p>
@@ -46,7 +46,7 @@ const handleActiveId = (id,item) => {
                     <img src="./images/phone.svg" alt="" />
                 </div>
                 <div className="message">
-                    <img src="./images/message.svg" alt="" />
+                    <img src="./images/Chat.svg" alt="" />
                 </div>
                 <div className="menu">
                     <img src="./images/verticalMenu.svg" alt="" />

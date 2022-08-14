@@ -16,7 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    z-index: 7;   
+    z-index: 7;
+    background-color: white;   
 }
 
 .searchBar-NavBtn{
@@ -27,6 +28,7 @@
     margin-top: 7px;
     padding: 10px 0;
     position: relative;
+    background-color: white;
 }
 
 .search-inp{
