@@ -1,10 +1,14 @@
 import React,{useState} from 'react'
 import "./activeCards.css"
 
-const ActiveCards = ({item,storeActiveId}) => {
+const ActiveCards = ({item,storeActiveId,storeActiveClientId}) => {
 
-const handleActiveId = (id,item) => {
+const handleActiveId = (id) => {
     storeActiveId(id); 
+}
+
+const handleActiveClientId = (id) => {
+    storeActiveClientId(id); 
 }
 
 
@@ -25,7 +29,7 @@ const handleActiveId = (id,item) => {
                 item.status == "driving" ? {color:"#44B49C",textDecoration:"underline"} :
                 item.status == "warning" ? {color:"#E78911",textDecoration:"underline"}:{ color:""}}>{item.name}</h3>
             </div>
-            <div className="companyName">
+            <div className="companyName" onClick={() => handleActiveClientId(item.id)}>
                 <p> { item.company[0].company1} + {item.company.length} others  </p>
             </div>
             <div className="route">

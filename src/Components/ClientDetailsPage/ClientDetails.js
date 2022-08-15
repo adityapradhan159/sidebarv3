@@ -66,7 +66,7 @@ const ClientDetails = ({isScreenShown, setScreenShown,item}) => {
                     </div>
                     <div className="statusDetails">
                         <p>
-                            {item.status}
+                            {item.truckStatus}
                             </p>
                     </div>
                 </div>

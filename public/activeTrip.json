@@ -3,7 +3,7 @@
     {
         "id":0,
         "icon":"./images/alertIcon.svg",
-        "name":"UP 01 AP 1345",
+        "name":"AS 01 AP 1315",
         "company":[
             {
                 "id":0,
@@ -34,13 +34,13 @@
         "button":"View SOS Logs",
         "loadContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
+        "noteContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     },
     {
         "id":1,
         "icon":"./images/successTruck.svg",
-        "name":"UP 01 AP 1345",
+        "name":"HR 01 AP 1345",
         "company":[
             {
                 "id":0,
@@ -70,14 +70,13 @@
         "status":"driving",
         "loadContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
-    
+        "noteContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     },
     {
         "id":2,
         "icon":"./images/warningIcon.svg",
-        "name":"UP 01 AP 1345",
+        "name":"UP 01 AP 9345",
         "company":[
             {
                 "id":0,
@@ -107,13 +106,13 @@
         "status":"warning",
         "loadContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
+        "noteContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     },
     {
         "id":3,
         "icon":"./images/warningIcon.svg",
-        "name":"UP 01 AP 1345",
+        "name":"MH 01 AP 1245",
         "company":[
             {
                 "id":0,
@@ -143,13 +142,13 @@
         "status":"warning",
         "loadContent":"4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":" 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
+        "noteContent":" 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     },
     {
         "id":4,
         "icon":"./images/successTruck.svg",
-        "name":"UP 01 AP 1345",
+        "name":"AP 01 AP 1995",
         "company":[
             {
                 "id":0,
@@ -179,13 +178,13 @@
         "status":"driving",
         "loadContent":"5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 5Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":"5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
+        "noteContent":"5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     },
     {
         "id":5,
         "icon":"./images/truck.svg",
-        "name":"UP 01 AP 1345",
+        "name":"AR 01 AP 1390",
         "company":[
             {
                 "id":0,
@@ -215,8 +214,8 @@
         "status":"stop",
         "loadContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "noteContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente."
-    
+        "noteContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
+        "truckStatus":"Available"
     }
 ]
 

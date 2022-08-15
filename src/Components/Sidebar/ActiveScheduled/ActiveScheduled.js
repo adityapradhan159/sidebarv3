@@ -8,12 +8,13 @@ import Consignment from '../../Consignment/Consignment';
 const ActiveScheduled = () => {
 
 
-
+// Toggle Tabs Between Active and Schedule Trips
   const [AStoggleState, setASToggleState] = useState(1);
-  
   const toggleTab = (index) => {
     setASToggleState(index);
   };
+
+// --------------------------------Active Trip----------------------------------------------------
 
   // State to store Active data from json
   const [activeData,setActiveData]=useState([]);
@@ -40,14 +41,30 @@ const ActiveScheduled = () => {
     getActiveData()
   },[])
 
+  // For Storing Id for Consigment Component.....
+  const [showActiveId,setShowActiveId] = useState(null);
+
+  const storeActiveId = (id) => {
+    setShowActiveId(id);
+  }
+
+  // For Storing Id for Client Details Component.....
+  const [showActiveClientId,setShowActiveClientId] = useState(null);
+
+  const storeActiveClientId = (id) => {
+    setShowActiveClientId(id);
+    setScreenShown(true)
+  }
+  
+// ----------------------------------------Schedule Trip----------------------------------------------------------------
 
   const [isScreenShown, setScreenShown] = useState(false);
 
   const [isAccordion, setAccordion] = useState(true);
 
+
+  // For Storing id for Schedule Trip and showing Cllient Details in Schedule Trip
   const [showId,setShowId] = useState(null);
-
-
   const storeId = (id) => {
     setShowId(id);
     setScreenShown(true)
@@ -80,10 +97,6 @@ const ActiveScheduled = () => {
     },[])
 
 
-  const [showActiveId,setShowActiveId] = useState(null);
-  const storeActiveId = (id) => {
-    setShowActiveId(id);
-  }
 
 
   return (
@@ -102,21 +115,26 @@ const ActiveScheduled = () => {
       </div>
 
       <div className="AScontent-tabs">
-      {/* ------------Active ----------------- */}
+      {/* ------------Active Trip----------------- */}
         <div className={AStoggleState === 1 ? "AScontent  active-content" : "AScontent"}>
-        {
-          activeData.map((item) =>(
-            <ActiveCards item={item} storeActiveId={storeActiveId}/>
-        ))
-          
-        }
+          {
+            activeData.map((item) =>(
+              <ActiveCards item={item} storeActiveId={storeActiveId} storeActiveClientId={storeActiveClientId}/>
+          ))
+            
+          }
 
-      {
-        showActiveId !== null &&  <Consignment item={activeData[showActiveId]}/>
-      }
+          {
+            showActiveId !== null &&  <Consignment item={activeData[showActiveId]}/>
+          }
+
+          {
+            showActiveClientId !== null && <ClientDetails  item={activeData[showActiveClientId]}  isScreenShown={isScreenShown} setScreenShown={setScreenShown}/>
+          }
+
       </div>
 
-      {/* -----------Schedule--------------- */}
+      {/* -----------Schedule Trip--------------- */}
         <div className={AStoggleState === 2 ? "AScontent  active-content" : "AScontent"}>
         <div className="months">
         <div className="month-container" onClick={() => {setAccordion(!isAccordion)}}>

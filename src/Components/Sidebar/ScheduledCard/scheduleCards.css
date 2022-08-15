@@ -107,6 +107,11 @@
     display: flex;
     align-items: center;
 }
+.personContainer{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
 .person-img{
     width: 25px;
     height: 25px;

@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import "./scheduleCards.css"
 
-const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
+const ScheduleCards = ({storeId,item,key}) => {
   
     const [showLink,setShowLink] = useState(true);
 
     const [showLinkD,setShowLinkD] = useState(true);
 
-    // Add Truck Input
+    // Add Truck Input--------------------------------------
     const [arr, setArr] = useState([]);
     const handleTruckAdd = () => {
         const add = [...arr,[]]
@@ -16,7 +16,7 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
 
     }
 
-    // Add Driver Input
+    // Add Driver Input----------------------------------------
     const [arrD, setArrD] = useState([]);
     const handleDriverAdd = () => {
         const addD = [...arrD,[]]
@@ -24,12 +24,30 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
         setShowLinkD((s) => !s)
     }
 
+    // Add change Name Input-------------------
+    const [showChangeInput,setShowChangeInput] = useState(true);
+    const [changeInp, setChangeInp] = useState([]);
+
+    const handleChangeName = () => {
+        const changeName = [...changeInp,[]]
+        setChangeInp(changeName);
+        setShowChangeInput((s) => !s)
+
+    }
+
 
     const handleChange = () => {
 
     }
 
-    
+    // --------Style Change for Change driver name............
+    // const handleChangeDriver = (e) => {
+    //     const changeD_id = document.getElementById("changeD-id");
+    //     changeD_id.style.display="flex"
+
+    //     const personContainer = document.getElementById("personContainer");
+    //     personContainer.style.display="none"
+    // }
 
     // Storing ID......
     const handleScreen=(id)=>{
@@ -95,8 +113,6 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
                 <p>
                    { item.company[0].company1} + {item.company.length} others                    
                 </p>
-                
-               
             </div>
 
             {/* ------------Route-------------- */}
@@ -109,15 +125,29 @@ const ScheduleCards = ({storeId,item,key,setTabIdState}) => {
                 {
                     item.person ? (
                         <>
-                        <div className="person-img">
-                            <img src="" alt="" />
+                        <div className="personContainer" id='personContainer' style={{cursor:"pointer",display: showChangeInput ? "flex" : "none"}}>
+                            <div className="person-img">
+                                <img src="" alt="" />
+                            </div>
+                            <p>{item.person}</p>
+                            <div className="change-name" style={{cursor:"pointer"}} onClick={() => handleChangeName()}>
+                                <img src="./images/changeName.svg" alt="" />
+                                <p>Change</p>
+                                <img src="./images/changeNameDd.svg" alt="" />
+                            </div>
                         </div>
-                        <p>{item.person}</p>
-                        <div className="change-name" style={{cursor:"pointer"}}>
-                            <img src="./images/changeName.svg" alt="" />
-                            <p>Change</p>
-                            <img src="./images/changeNameDd.svg" alt="" />
-                        </div>
+                        {
+                        changeInp.map((data,i) => {
+                            return(
+                                <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e,i)}/>
+                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
+                                </div>
+                            )
+                        })
+                        }
+
+                       
                         </>
                     ) : (
                         <>
