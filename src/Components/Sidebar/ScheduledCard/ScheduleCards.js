@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import "./scheduleCards.css"
 
-const ScheduleCards = ({storeId,item,key}) => {
+const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
   
     const [showLink,setShowLink] = useState(true);
 
@@ -35,9 +35,23 @@ const ScheduleCards = ({storeId,item,key}) => {
 
     }
 
+    const [driverName,setDriverName] = useState("")
 
-    const handleChange = () => {
+    const handleSave = () => {
+        const newItem= {...item}
+        newItem.person = driverName;
 
+        setScheduleData(prev => {
+            prev[newItem.id] = newItem
+            console.log(prev)
+            return prev;
+        })  
+        console.log(newItem) 
+    }
+
+
+    const handleChange = (e) => {
+    
     }
 
     // --------Style Change for Change driver name............
@@ -59,6 +73,20 @@ const ScheduleCards = ({storeId,item,key}) => {
 
     const date = new Date(item.date);
     const day = weekday[date.getDay()]
+
+    const handleDriverChange =() => {
+
+    }
+
+    const handleINPChange =(e) => {
+        const inp = e.target.value;
+        setDriverName(inp)
+    }
+
+    useEffect(() => {
+        console.log(item)  
+    }, [item])
+    
 
   return (
     <>
@@ -89,15 +117,16 @@ const ScheduleCards = ({storeId,item,key}) => {
                     item.name ?  <h3>{item.name}</h3> 
                     : (
                     <>
-                    <div className="add-btn" style={{display: showLink ? "flex" : "none", alignItems:"center",cursor:"pointer"}} onClick={() => handleTruckAdd()}>
+                    <div className="add-btn" style={{display: showLink ? "flex" : "none", alignItems:"center",cursor:"pointer"}} onClick={(e) => handleTruckAdd()}>
                         <p style={{color: "#216CB0",fontSize:"14px",fontWeight:"400",textDecoration:"underline",textDecorationColor:"#216CB0"}}>Add Truck</p>
                         <img src="./images/addBtn.svg" alt="" style={{marginLeft:"3px"}}/>
                     </div>
                     {
                         arr.map((data,i) => {
                             return(
+                            
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e,i)}/>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e)}/>
                                     <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
                                 </div>
                             )
@@ -140,7 +169,7 @@ const ScheduleCards = ({storeId,item,key}) => {
                         changeInp.map((data,i) => {
                             return(
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e,i)}/>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleDriverChange(e)}/>
                                     <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
                                 </div>
                             )
@@ -160,8 +189,8 @@ const ScheduleCards = ({storeId,item,key}) => {
                         arrD.map((data,i) => {
                             return(
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e,i)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleINPChange(e)}/>
+                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSave()}>Save</button>
                                 </div>
                             )
                         })

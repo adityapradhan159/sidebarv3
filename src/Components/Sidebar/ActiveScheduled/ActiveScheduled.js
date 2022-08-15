@@ -150,7 +150,7 @@ const ActiveScheduled = () => {
        <div className={isAccordion ? "scheduleCard-Container" : "schedulecarD-Cont-None"} >
         {
           scheduleData.map((item) =>(
-            <ScheduleCards item={item} storeId={storeId}/>
+            <ScheduleCards item={item} storeId={storeId} scheduleData={scheduleData} setScheduleData={setScheduleData}/>
         ))
         }
         
