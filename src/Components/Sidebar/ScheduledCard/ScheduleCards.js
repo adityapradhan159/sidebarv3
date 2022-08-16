@@ -7,7 +7,9 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
     const [showLinkD,setShowLinkD] = useState(true);
 
-    // Add Truck Input--------------------------------------
+
+
+    //To Add Truck Input Field--------------------------------------
     const [arr, setArr] = useState([]);
     const handleTruckAdd = () => {
         const add = [...arr,[]]
@@ -16,7 +18,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
     }
 
-    // Add Driver Input----------------------------------------
+    //To Add Driver Input Field----------------------------------------
     const [arrD, setArrD] = useState([]);
     const handleDriverAdd = () => {
         const addD = [...arrD,[]]
@@ -24,7 +26,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         setShowLinkD((s) => !s)
     }
 
-    // Add change Name Input-------------------
+    //To Add change Name Input Field-------------------
     const [showChangeInput,setShowChangeInput] = useState(true);
     const [changeInp, setChangeInp] = useState([]);
 
@@ -35,33 +37,75 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
     }
 
+    
+    // Code To Add Driver Name.....................................................
     const [driverName,setDriverName] = useState("")
-
-    const handleSave = () => {
-        const newItem= {...item}
-        newItem.person = driverName;
+    const handleSaveAddDriver = () => {
+        const newItem = {...item}
+         newItem.person = driverName;
 
         setScheduleData(prev => {
-            prev[newItem.id] = newItem
-            console.log(prev)
-            return prev;
+          const newData = [...prev]
+          newData[newItem.id] = newItem
+            console.log(newData)
+            return newData;
         })  
         console.log(newItem) 
     }
 
-
-    const handleChange = (e) => {
-    
+    const handleAddDriverInpChange =(e) => {
+        const inp = e.target.value;
+        setDriverName(inp)
     }
 
-    // --------Style Change for Change driver name............
-    // const handleChangeDriver = (e) => {
-    //     const changeD_id = document.getElementById("changeD-id");
-    //     changeD_id.style.display="flex"
 
-    //     const personContainer = document.getElementById("personContainer");
-    //     personContainer.style.display="none"
-    // }
+
+
+// ---------Code to Add Truck Name.........................................
+    const [truckName,setTruckName] = useState("")
+
+    const handleSaveAddTruckName = () => {
+        const newTruck= {...item}
+         newTruck.name = truckName;
+
+        setScheduleData(prev => {
+          const newTruckData = [...prev]
+          newTruckData[newTruck.id] = newTruck
+            console.log(newTruckData)
+            return newTruckData;
+        })  
+        console.log(newTruck) 
+    }
+
+    const handleAddTruckNameChange = (e) => {
+        const truckNameInp = e.target.value;
+        setTruckName(truckNameInp);
+    }
+    
+
+
+// ----------------Code to change Driver Name.............................
+    const [changeDriverName,setChangeDriverName] = useState("")
+
+    const handleChangeDriverNameSave = () => {
+        const newDriver= {...item}
+
+         newDriver.person = changeDriverName;
+
+         setScheduleData(prev => {
+          const newDriverNameData = [...prev]
+          newDriverNameData[newDriver.id] = newDriver
+            console.log(newDriverNameData)
+            return newDriverNameData;
+        })  
+        console.log(newDriver) 
+    }
+
+    const handleDriverNameChange =(e) => {
+        const changeDriverNameInp = e.target.value;
+        setChangeDriverName(changeDriverNameInp);
+    }
+
 
     // Storing ID......
     const handleScreen=(id)=>{
@@ -74,17 +118,11 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
     const date = new Date(item.date);
     const day = weekday[date.getDay()]
 
-    const handleDriverChange =() => {
 
-    }
 
-    const handleINPChange =(e) => {
-        const inp = e.target.value;
-        setDriverName(inp)
-    }
 
     useEffect(() => {
-        console.log(item)  
+         
     }, [item])
     
 
@@ -126,8 +164,8 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                             return(
                             
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleAddTruckNameChange(e)}/>
+                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddTruckName()}>Save</button>
                                 </div>
                             )
                         })
@@ -169,8 +207,8 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                         changeInp.map((data,i) => {
                             return(
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleDriverChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}}>Save</button>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleDriverNameChange(e)}/>
+                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleChangeDriverNameSave()}>Save</button>
                                 </div>
                             )
                         })
@@ -189,8 +227,8 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                         arrD.map((data,i) => {
                             return(
                                 <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleINPChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSave()}>Save</button>
+                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleAddDriverInpChange(e)}/>
+                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddDriver()}>Save</button>
                                 </div>
                             )
                         })
