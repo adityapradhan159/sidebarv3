@@ -34,7 +34,6 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         const changeName = [...changeInp,[]]
         setChangeInp(changeName);
         setShowChangeInput((s) => !s)
-
     }
 
     
@@ -86,9 +85,10 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
 // ----------------Code to change Driver Name.............................
     const [changeDriverName,setChangeDriverName] = useState("")
+    const [hideChangeInp,setHideChangeInp] = useState(true)
 
     const handleChangeDriverNameSave = () => {
-        const newDriver= {...item}
+        const newDriver = {...item}
 
          newDriver.person = changeDriverName;
 
@@ -99,6 +99,8 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
             return newDriverNameData;
         })  
         console.log(newDriver) 
+        setShowChangeInput((s) => !s)
+        setHideChangeInp(!hideChangeInp)
     }
 
     const handleDriverNameChange =(e) => {
@@ -106,7 +108,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         setChangeDriverName(changeDriverNameInp);
     }
 
-
+// -------------------------------------------------------------------------------
     // Storing ID......
     const handleScreen=(id)=>{
         storeId(id);
@@ -206,13 +208,13 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                         {
                         changeInp.map((data,i) => {
                             return(
-                                <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
+                                <div className="input-btn" style={{display: hideChangeInp ? "flex":"none",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
                                     <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleDriverNameChange(e)}/>
                                     <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleChangeDriverNameSave()}>Save</button>
                                 </div>
                             )
                         })
-                        }
+                    }
 
                        
                         </>
