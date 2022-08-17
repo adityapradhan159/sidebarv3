@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 .ActiveCards:hover{
-    background-color: #eeeeee;
+    background-color: #f3f3f3;
 }
 .ActiveCard-container{
     width: 94%;
