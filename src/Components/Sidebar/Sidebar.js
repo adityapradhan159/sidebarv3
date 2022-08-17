@@ -62,7 +62,7 @@ const Sidebar = () => {
        
       </div>
       
-      <div className="divider"></div>
+      {/* <div className="divider"></div> */}
 
       <ActiveScheduled/>   
           

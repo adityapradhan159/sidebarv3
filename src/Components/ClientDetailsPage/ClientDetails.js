@@ -118,7 +118,7 @@ const ClientDetails = ({isScreenShown, setScreenShown,item}) => {
                             <p>
                                 {value.company1}
                             </p>
-                        </div>  {}
+                        </div>  
                     </div>
                 </>
                 ))

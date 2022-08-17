@@ -81,14 +81,12 @@
 .scheduleTripName{
     font-size: 14px;
     font-weight: 400;
-    text-decoration: underline;
 }
 
 /* -------Comapny Name------ */
 .companyName{
     font-size: 13px;
     font-weight: 400;
-    text-decoration: underline;
     margin-top: 2px;
 }
 
@@ -108,7 +106,7 @@
     align-items: center;
 }
 .personContainer{
-    width: 300px;
+    width: 350px;
     display: flex;
     align-items: center;
 }
@@ -121,7 +119,6 @@
 .person p{
     font-size: 13px;
     margin-left: 5px;
-    text-decoration: underline;
     font-weight: 400;
 }
 .change-name{
@@ -148,7 +145,7 @@
     flex-direction: column;
     width: 40%;
     height: 100%;
-    z-index: 0;
+    
 }
 .tripContact-icons{
     width: 100%;
@@ -184,4 +181,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.truckValue{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+.truckValue p{
+    margin-left: 5px;
+}
+.input-btn1{
+    position: relative;
+}
+.dropDownValues{
+    width: 250px;
+    height: auto;
+    position: sticky;
+    background-color: white;
+    z-index: 3;
+    top: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+}
+.dropDownValues::-webkit-scrollbar{
+    width: 2px;
+    background-color: rgb(192, 191, 191);
+}
+.addDriverDiv{
+    display: flex;
+    flex-direction: column;
+}
+.changeDriverDiv{
+    display: flex;
+    flex-direction: column;
 }

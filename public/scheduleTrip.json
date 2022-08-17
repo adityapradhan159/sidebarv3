@@ -30,7 +30,8 @@
         "route":"Mumbai-Kerala Via Pune",
         "date": "2022-01-23T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"]
     },
 
 
@@ -56,9 +57,11 @@
         ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
+        "truckName":["UP 01 AP 1905","UP 01 AP 1905"],
         "date": "2022-02-19T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"]
     },
     {
         "id":2,
@@ -77,7 +80,8 @@
         "person":"Rakesh Kumar",
         "date": "2022-02-07T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"]
     },
     {
         "id":3,
@@ -111,7 +115,8 @@
         "person":"Rakesh Kumar",
         "date": "2022-01-13T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"]
     },
     {
         "id":4,
@@ -144,7 +149,8 @@
         "person":"Rakesh Kumar",
         "date": "2022-03-22T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"]
     },
     {
         "id":5,
@@ -162,6 +168,8 @@
         "route":"Mumbai-Kerala Via Pune",
         "date": "2022-03-10T09:04:45.904Z",
         "button":"Change",
-        "truckStatus":"Available"
+        "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy"],
+        "truckStatus":"Available",
+        "truckName":["UP 01 AP 1905","UP 01 AP 1905"]
     }
 ]

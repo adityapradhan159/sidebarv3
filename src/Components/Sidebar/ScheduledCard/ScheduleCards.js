@@ -34,11 +34,14 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         const changeName = [...changeInp,[]]
         setChangeInp(changeName);
         setShowChangeInput((s) => !s)
+        setHideChangeInp(false)
+      
     }
 
     
     // Code To Add Driver Name.....................................................
     const [driverName,setDriverName] = useState("")
+
     const handleSaveAddDriver = () => {
         const newItem = {...item}
          newItem.person = driverName;
@@ -52,9 +55,28 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         console.log(newItem) 
     }
 
+    const [driverNameSuggestion,setDriverNameSuggestion] = useState([])
+
     const handleAddDriverInpChange =(e) => {
-        const inp = e.target.value;
-        setDriverName(inp)
+        const driverName = e.target.value;
+        setDriverName(driverName)
+
+
+        let driverNamematches = []
+
+        if(driverName.length > 0){
+            driverNamematches = item.personName.filter(driverloc => {
+            const regex = new RegExp(`${driverName}`,"gi")
+            return driverloc.match(regex)
+          })
+          console.log(driverNameSuggestion)
+        }
+        setDriverNameSuggestion(driverNamematches)
+    }
+
+    const onDriverDropDownHandler = (driverName) => {
+        setDriverName(driverName);
+        setDriverNameSuggestion([])
     }
 
 
@@ -76,11 +98,30 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         console.log(newTruck) 
     }
 
-    const handleAddTruckNameChange = (e) => {
-        const truckNameInp = e.target.value;
-        setTruckName(truckNameInp);
-    }
     
+    const [truckNameSuggestion,setTruckNameSuggestion] = useState([])
+
+    const handleAddTruckNameChange = (e) => {
+        const truckName = e.target.value;
+        setTruckName(truckName);
+
+        let pickupmatches = []
+
+        if(truckName.length >0){
+          pickupmatches = item.truckName.filter(pickuploc => {
+            const regex = new RegExp(`${truckName}`,"gi")
+            return pickuploc.match(regex)
+          })
+          console.log(truckNameSuggestion)
+        }
+        setTruckNameSuggestion(pickupmatches)
+        
+    }
+
+    const onPickupSuggestionHandler = (truckName) => {
+        setTruckName(truckName);
+        setTruckNameSuggestion([])
+    }
 
 
 // ----------------Code to change Driver Name.............................
@@ -100,13 +141,39 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         })  
         console.log(newDriver) 
         setShowChangeInput((s) => !s)
-        setHideChangeInp(!hideChangeInp)
+        setHideChangeInp(true)
+        
+       
     }
 
     const handleDriverNameChange =(e) => {
-        const changeDriverNameInp = e.target.value;
-        setChangeDriverName(changeDriverNameInp);
+        const changeDriverName = e.target.value;
+        setChangeDriverName(changeDriverName);
+
+        let driverNamematches = []
+
+        if(changeDriverName.length > 0){
+            driverNamematches = item.personName.filter(driverloc => {
+            const regex = new RegExp(`${changeDriverName}`,"gi")
+            return driverloc.match(regex)
+          })
+          console.log(driverNameSuggestion)
+        }
+        setDriverNameSuggestion(driverNamematches)
     }
+
+    
+    const onChangeDriverDropDownHandler = (changeDriverName) => {
+        setChangeDriverName(changeDriverName);
+        setDriverNameSuggestion([])
+    }
+
+
+
+// ---------------------------Auto Complete------------------------------------
+
+
+  
 
 // -------------------------------------------------------------------------------
     // Storing ID......
@@ -121,10 +188,8 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
     const day = weekday[date.getDay()]
 
 
-
-
     useEffect(() => {
-         
+      
     }, [item])
     
 
@@ -158,17 +223,32 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                     : (
                     <>
                     <div className="add-btn" style={{display: showLink ? "flex" : "none", alignItems:"center",cursor:"pointer"}} onClick={(e) => handleTruckAdd()}>
-                        <p style={{color: "#216CB0",fontSize:"14px",fontWeight:"400",textDecoration:"underline",textDecorationColor:"#216CB0"}}>Add Truck</p>
+                        <p style={{color: "#216CB0",fontSize:"14px",fontWeight:"400"}}>Add Truck</p>
                         <img src="./images/addBtn.svg" alt="" style={{marginLeft:"3px"}}/>
                     </div>
                     {
                         arr.map((data,i) => {
                             return(
-                            
-                                <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleAddTruckNameChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddTruckName()}>Save</button>
+                            <>
+                                <div className="input-btn1" style={{display:"flex",width:"255px",background:"white",height:"32px"}}>
+                                    <input value={truckName} style={{position:"relative",zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid #BABABA",outline:"none",borderRadius:"8px"}} type="text" onChange={e=>handleAddTruckNameChange(e)}/>
+                                    <div className="inpuDivider" style={{zIndex:"3",backgroundColor:"white",width:"10px",height:"32px"}}></div>
+                                    <button style={{fontFamily:"Noto Sans",cursor:"pointer",marginLeft:"0",padding:"5px 15px",backgroundColor:"#216AAC",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddTruckName()}>Save</button>
                                 </div>
+
+                                <div className="dropDownValues">
+                                    {
+                                        truckNameSuggestion.map((val) => (
+                                            <>
+                                                <div className="truckValue">
+                                                    <img src="./images/truckNameImg.svg" alt="" />
+                                                   <p onClick={() => onPickupSuggestionHandler(val)}>{val}</p>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
+                                </div>
+                            </>
                             )
                         })
                     }
@@ -205,33 +285,71 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                                 <img src="./images/changeNameDd.svg" alt="" />
                             </div>
                         </div>
-                        {
+                        <div className="changeDriverDiv" id='changeDriverDiv' style={{display: hideChangeInp ? "none":"flex"}}>
+                        {/* {
                         changeInp.map((data,i) => {
-                            return(
-                                <div className="input-btn" style={{display: hideChangeInp ? "flex":"none",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleDriverNameChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleChangeDriverNameSave()}>Save</button>
+                            return( */}
+                                <>
+                                {/* <div className="changeDriverDiv" style={{display: hideChangeInp ? "flex":"none"}}> */}
+                                
+                                <div className="input-btn" id='driverNameInp' style={{display:"flex",width:"255px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
+                                    <input value={changeDriverName} style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid #BABABA",outline:"none",borderRadius:"8px"}} type="text" onChange={e=>handleDriverNameChange(e)}/>
+                                    <div className="inpuDivider" style={{zIndex:"3",backgroundColor:"white",width:"10px",height:"32px"}}></div>
+                                    <button style={{cursor:"pointer",fontFamily:"Noto Sans",padding:"5px 15px",backgroundColor:"#216AAC",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleChangeDriverNameSave()}>Save</button>
                                 </div>
-                            )
-                        })
-                    }
 
-                       
-                        </>
+                                <div className="dropDownValues">
+                                {
+                                    driverNameSuggestion.map((val) => (
+                                        <>
+                                            <div className="truckValue">
+                                                <img src="./images/personDropDown.svg" alt="" />
+                                                <p onClick={() => onChangeDriverDropDownHandler(val)}>{val}</p>
+                                            </div>
+                                        </>
+                                    ))
+                                }
+                                </div>
+                               
+                                </>
+                    {/* //         )
+                    //     })
+                    // } */}
+                    </div>  
+                    </>
                     ) : (
                         <>
                         <div className="add-btn" style={{display: showLinkD ? "flex" : "none", alignItems:"center",cursor:"pointer"}} onClick={() => handleDriverAdd()}>
                             <img src="./images/driverName.svg" alt="" style={{marginLeft:"3px"}}/>
-                            <p style={{color: "#216CB0",fontSize:"14px",fontWeight:"400",textDecoration:"underline",textDecorationColor:"#216CB0"}}>Add Driver</p>
+                            
+                            <p style={{color: "#216CB0",fontSize:"14px",fontWeight:"400"}}>Add Driver</p>
                         </div>
                         
                         {
                         arrD.map((data,i) => {
                             return(
-                                <div className="input-btn" style={{display:"flex",width:"250px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
-                                    <input style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid gray",outline:"none",borderRadius:"4px"}} type="text" onChange={e=>handleAddDriverInpChange(e)}/>
-                                    <button style={{cursor:"pointer",marginLeft:"5px",padding:"5px 15px",backgroundColor:"blue",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddDriver()}>Save</button>
+                                <>
+                                <div className="addDriverDiv">
+                                <div className="input-btn1" style={{display:"flex",width:"255px",zIndex:"2",backgroundColor:"white",height:"30px"}}>
+                                    <input value={driverName} style={{zIndex:"2",width:"200px",padding:"5px 5px",border:"1px solid #BABABA",outline:"none",borderRadius:"8px"}} type="text" onChange={e=>handleAddDriverInpChange(e)}/>
+                                    <div className="inpuDivider" style={{zIndex:"3",backgroundColor:"white",width:"10px",height:"32px"}}></div>
+                                    <button style={{cursor:"pointer",fontFamily:"Noto Sans",padding:"5px 15px",backgroundColor:"#216AAC",border:"none",borderRadius:"4px",color:"white",zIndex:"2"}} onClick={() => handleSaveAddDriver()}>Save</button>
                                 </div>
+
+                                <div className="dropDownValues">
+                                {
+                                    driverNameSuggestion.map((val) => (
+                                        <>
+                                            <div className="truckValue">
+                                                <img src="./images/personDropDown.svg" alt="" />
+                                                <p onClick={() => onDriverDropDownHandler(val)}>{val}</p>
+                                            </div>
+                                        </>
+                                    ))
+                                }
+                                </div>
+                                </div>
+                                </>
                             )
                         })
                         }

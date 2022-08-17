@@ -5,8 +5,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #D9D7D7;
+    border-bottom: 1px solid #ebebeb;
     cursor: pointer;
+}
+.ActiveCards:hover{
+    background-color: #eeeeee;
 }
 .ActiveCard-container{
     width: 94%;
@@ -40,7 +43,6 @@
 .companyName{
     font-size: 13px;
     font-weight: 400;
-    text-decoration: underline;
 }
 
 /* -----------Route Name---------- */
@@ -66,7 +68,6 @@
 .person p{
     font-size: 13px;
     margin-left: 5px;
-    text-decoration: underline;
     font-weight: 400;
 }
 

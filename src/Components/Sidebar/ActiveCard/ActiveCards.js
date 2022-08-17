@@ -25,9 +25,9 @@ const handleActiveClientId = (id) => {
 
         <div className="ActiveTripDetails">
             <div className="activeTripName">
-                <h3 style={item.status == "alert" ? { color:"#FF0000",textDecoration:"underline"} : 
-                item.status == "driving" ? {color:"#44B49C",textDecoration:"underline"} :
-                item.status == "warning" ? {color:"#E78911",textDecoration:"underline"}:{ color:""}}>{item.name}</h3>
+                <h3 style={item.status == "alert" ? { color:"#FF0000"} : 
+                item.status == "driving" ? {color:"#44B49C"} :
+                item.status == "warning" ? {color:"#E78911"}:{ color:""}}>{item.name}</h3>
             </div>
             <div className="companyName" onClick={() => handleActiveClientId(item.id)}>
                 <p> { item.company[0].company1} + {item.company.length} others  </p>
