@@ -31,7 +31,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
     const [changeInp, setChangeInp] = useState([]);
 
     const handleChangeName = () => {
-        const changeName = [...changeInp,[]]
+        const changeName = changeInp
         setChangeInp(changeName);
         setShowChangeInput((s) => !s)
         setHideChangeInp(false)

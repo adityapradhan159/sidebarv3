@@ -199,6 +199,7 @@
 }
 .dropDownValues{
     width: 250px;
+    max-height: 100px;
     height: auto;
     position: sticky;
     background-color: white;
