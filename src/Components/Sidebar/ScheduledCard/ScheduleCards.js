@@ -55,7 +55,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         console.log(newItem) 
     }
 
-    const [driverNameSuggestion,setDriverNameSuggestion] = useState([])
+    const [driverNameSuggestion,setDriverNameSuggestion] = useState(item.personName)
 
     const handleAddDriverInpChange =(e) => {
         const driverName = e.target.value;
@@ -64,13 +64,13 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
         let driverNamematches = []
 
-        if(driverName.length > 0){
+        
             driverNamematches = item.personName.filter(driverloc => {
             const regex = new RegExp(`${driverName}`,"gi")
             return driverloc.match(regex)
           })
           console.log(driverNameSuggestion)
-        }
+       
         setDriverNameSuggestion(driverNamematches)
     }
 
@@ -99,22 +99,21 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
     }
 
     
-    const [truckNameSuggestion,setTruckNameSuggestion] = useState([])
+    const [truckNameSuggestion,setTruckNameSuggestion] = useState(item.truckName)
 
     const handleAddTruckNameChange = (e) => {
         const truckName = e.target.value;
         setTruckName(truckName);
 
-        let pickupmatches = []
+        let truckNameMatches = []
 
-        if(truckName.length >0){
-          pickupmatches = item.truckName.filter(pickuploc => {
-            const regex = new RegExp(`${truckName}`,"gi")
-            return pickuploc.match(regex)
-          })
+        truckNameMatches = item.truckName.filter(truckloc => {
+        const regex = new RegExp(`${truckName}`,"gi")
+        return truckloc.match(regex)
+        })
           console.log(truckNameSuggestion)
-        }
-        setTruckNameSuggestion(pickupmatches)
+
+        setTruckNameSuggestion(truckNameMatches)
         
     }
 
@@ -142,23 +141,20 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         console.log(newDriver) 
         setShowChangeInput((s) => !s)
         setHideChangeInp(true)
-        
-       
+          
     }
 
     const handleDriverNameChange =(e) => {
         const changeDriverName = e.target.value;
         setChangeDriverName(changeDriverName);
-
+       
         let driverNamematches = []
-
-        if(changeDriverName.length > 0){
-            driverNamematches = item.personName.filter(driverloc => {
-            const regex = new RegExp(`${changeDriverName}`,"gi")
-            return driverloc.match(regex)
-          })
-          console.log(driverNameSuggestion)
-        }
+    
+        driverNamematches = item.personName.filter(driverloc => {
+        const regex = new RegExp(`${changeDriverName}`,"gi")
+        return driverloc.match(regex)
+        })
+         
         setDriverNameSuggestion(driverNamematches)
     }
 
@@ -167,10 +163,6 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
         setChangeDriverName(changeDriverName);
         setDriverNameSuggestion([])
     }
-
-
-
-// ---------------------------Auto Complete------------------------------------
 
 
   
@@ -189,7 +181,7 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
 
 
     useEffect(() => {
-      
+    
     }, [item])
     
 

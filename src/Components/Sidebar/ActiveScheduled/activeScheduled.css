@@ -13,8 +13,9 @@
 
 .ASTabContainer::-webkit-scrollbar{
   width: 0px; 
-  background-color: #d2d2d3;
+  background-color: transparent;
 }
+
 
 .ASBloc-tabs {
   display: flex;
@@ -58,9 +59,15 @@
 }
 
 .AScontent-tabs::-webkit-scrollbar{
-  width: 3px;
-  background-color: #e2e2e2;
+  width: 0px;
 }
+/* .AScontent-tabs::-webkit-scrollbar-track{
+  background-color: black;
+ }
+.AScontent-tabs::-webkit-scrollbar-thumb{
+ background-color: rgb(219, 19, 19);
+} */
+
 .AScontent{
   width: 100%;
   height: 100%;
@@ -73,8 +80,51 @@
   overflow-x: hidden;
 }
 .active-content::-webkit-scrollbar{
-  width: 0px;
+  width: 10px;
 }
+.active-content::-webkit-scrollbar-button{
+  width: 10px;
+  
+  background-color: #F0F0F0;
+}
+.active-content::-webkit-scrollbar-thumb{
+  background-color: #5E5E62;
+  border-radius: 20px;
+}
+.active-content::-webkit-scrollbar-track{
+  background-color: #F0F0F0;
+}
+
+.active-content::-webkit-scrollbar-button:single-button {
+  background-color: #eee;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+
+.active-content::-webkit-scrollbar-button:single-button:vertical:increment {
+  height: 10px;
+  width: 16px;
+  background-position: center 4px;
+  background-image: url("../../../../public/images/scrollbarDown.svg");
+}
+
+.active-content::-webkit-scrollbar-button:single-button:vertical:decrement {
+  height: 10px;
+  width: 16px;
+  background-position: center 4px;
+  background-image: url("../../../../public/images/scrollbarUp.svg");
+}
+
+/* .active-content::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent #777777 transparent;
+} */
+
+
+
+
+
+
 .AScontent .months{
   width: 100%;
   height: 27px;

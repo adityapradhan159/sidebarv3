@@ -35,7 +35,8 @@
         "loadContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":"1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     },
     {
         "id":1,
@@ -71,7 +72,8 @@
         "loadContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     },
     {
         "id":2,
@@ -107,7 +109,8 @@
         "loadContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":" 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     },
     {
         "id":3,
@@ -143,7 +146,8 @@
         "loadContent":"4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":" 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     },
     {
         "id":4,
@@ -179,7 +183,8 @@
         "loadContent":"5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":" 5Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":"5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     },
     {
         "id":5,
@@ -215,7 +220,8 @@
         "loadContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "consignmentContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
         "noteContent":"6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae eligendi tempora expedita sunt corporis accusantium similique qui fugiat sapiente.",
-        "truckStatus":"Available"
+        "truckStatus":"Available",
+        "phoneNo":"+91 32492453052"
     }
 ]
 

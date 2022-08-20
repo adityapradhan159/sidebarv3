@@ -3,12 +3,18 @@ import "./activeCards.css"
 
 const ActiveCards = ({item,storeActiveId,storeActiveClientId}) => {
 
+    const [showPhoneNumber,setShowPhoneNumber] = useState(false)
+
 const handleActiveId = (id) => {
     storeActiveId(id); 
 }
 
 const handleActiveClientId = (id) => {
     storeActiveClientId(id); 
+}
+
+const handleShowPhoneNo = () => {
+    setShowPhoneNumber(!showPhoneNumber)
 }
 
 
@@ -46,9 +52,14 @@ const handleActiveClientId = (id) => {
         <div className="tripContact">
             {/* ----------Contact Icons--------- */}
             <div className="tripContact-icons">
-                <div className="call">
+                <div className="call" onClick={() => handleShowPhoneNo()}>
                     <img src="./images/phone.svg" alt="" />
+                    <div className="customerPhoneNo" style={{display: showPhoneNumber ? "flex":"none"}}>
+                        <div className="triangleDiv"></div>
+                        {item.phoneNo}
+                    </div>
                 </div>
+                
                 <div className="message">
                     <img src="./images/Chat.svg" alt="" />
                 </div>

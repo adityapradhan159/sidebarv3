@@ -57,7 +57,7 @@
         ],
         "route":"Mumbai-Kerala Via Pune",
         "person":"Rakesh Kumar",
-        "truckName":["UP 01 AP 1905","UP 01 AP 1905","UP 01 AP 1905","UP 01 AP 1905"],
+        "truckName":["UP 01 AP 1033","UP 01 AP 4903","UP 01 AP 9037"],
         "date": "2022-02-19T09:04:45.904Z",
         "button":"Change",
         "truckStatus":"Available",
@@ -170,6 +170,6 @@
         "button":"Change",
         "personName":["Rakesh Kumar","Mohit Sharma","Rohit Roy","Rohit Roy","Rohit Roy"],
         "truckStatus":"Available",
-        "truckName":["UP 01 AP 1905","UP 01 AP 1905","UP 01 AP 1905"]
+        "truckName":["UP 01 AP 1033","UP 01 AP 4903","UP 01 AP 9037"]
     }
 ]
