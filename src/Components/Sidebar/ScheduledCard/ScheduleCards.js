@@ -342,9 +342,9 @@ const ScheduleCards = ({storeId,item,key,setScheduleData}) => {
                                 </div>
                                 </div>
                                 </>
-                            )
+                             )
                         })
-                        }
+                        } 
                         
                         </>
                         
